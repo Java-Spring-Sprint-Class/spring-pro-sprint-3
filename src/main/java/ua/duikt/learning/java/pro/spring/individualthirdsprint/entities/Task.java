@@ -1,15 +1,20 @@
 package ua.duikt.learning.java.pro.spring.individualthirdsprint.entities;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
 /**
  * Created by Mykyta Sirobaba on 20.01.2026.
  * email mykyta.sirobaba@gmail.com
  */
+@Entity
+@Table(name = "tasks")
 // TODO: Add the @Entity and @Table(name = "tasks") annotations
 public class Task {
-
     // TODO: Add @Id and @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;

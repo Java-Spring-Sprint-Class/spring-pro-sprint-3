@@ -2,6 +2,8 @@ package ua.duikt.learning.java.pro.spring.individualthirdsprint.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import ua.duikt.learning.java.pro.spring.individualthirdsprint.entities.Task;
+import java.util.List;
 
 /**
  * Created by Mykyta Sirobaba on 20.01.2026.
@@ -9,9 +11,12 @@ import org.springframework.stereotype.Repository;
  */
 // TODO: This interface should extend JpaRepository<Task, Long>
 @Repository
-public interface TaskRepository extends JpaRepository<?, ?> {
+public interface TaskRepository extends JpaRepository<Task, Long> {
 
     // TODO: Try declaring a method to find tasks by status:
     // List<Task> findByCompleted(boolean completed);
+
+    // "Magic method" — Spring generates the SQL automatically from the name!
+    List<Task> findByCompleted(boolean completed);
 }
 
